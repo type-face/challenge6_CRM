@@ -1,11 +1,18 @@
 Challenge6::Application.routes.draw do
+  resources :provinces
+
+  root 'customers#index'
+
   resources :customers
 
+
+  get '/finder', to: 'finder#index', as: 'finder'
+  get '/finder/missing_email', to: 'finder#missing_email', as: 'missing_email'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  # root 'welcome#index'
+  
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

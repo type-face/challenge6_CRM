@@ -1,3 +1,5 @@
 class Customer < ActiveRecord::Base
-  validates :name, presence => true
+  validates :fullName, :presence => true
+
+  belongs_to :province
 end

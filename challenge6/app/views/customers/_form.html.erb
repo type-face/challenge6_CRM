@@ -20,12 +20,19 @@
     <%= f.text_field :phone %>
   </div>
   <div class="field">
+    <%= f.label :province_id %><br>
+    <%= f.collection_select :province_id, @provinces, :id, :name %>
+  </div>
+  <div class="field">
     <%= f.label :email %><br>
     <%= f.text_field :email %>
   </div>
   <div class="field">
     <%= f.label :image %><br>
-    <%= f.text_field :image %>
+    <%= f.text_field :image %><br>
+    <% unless @customer.image.nil?%>
+      <%= image_tag @customer.image, height: '150' %>
+    <% end %>
   </div>
   <div class="field">
     <%= f.label :notes %><br>
